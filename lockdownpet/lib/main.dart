@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Hello Avocado',
       ),
       home: MyHomePage(title: 'LockDown Pet'),
+      debugShowCheckedModeBanner: false
     );
   }
 }
@@ -44,14 +45,19 @@ class _MyHomePageState extends State<MyHomePage> {
   bool switchchoice =false;
   int animalSelection=1;
   Animal animal = new Animal();
+  
 
   @override
   Widget build(BuildContext context) {
+    animal.typeSet(animalSelection);
     return Scaffold(
+      
+      
       appBar: AppBar(
         title: Text(widget.title),
         centerTitle: true,
       ),
+      
       body: Center(
         child: Column(
         

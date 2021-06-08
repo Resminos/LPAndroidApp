@@ -48,7 +48,14 @@ class _MainMenuState extends State<MainMenu>{
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
        children: [
          lifeDisplay(widget.animal.lifeValueGet(), 40),
-         montextpixel(widget.animal.goldsGet().toString(), 1, Colors.black),
+         Row(
+           children:[
+
+          Image.asset('assets/images/coin.png', width: 20,),
+         montextpixel(widget.animal.goldsGet().toString(), 1.5, Colors.black),
+           ]
+         )
+         
        ],
 
       ),
@@ -95,11 +102,23 @@ class _MainMenuState extends State<MainMenu>{
 
         
 
-          IconButton(onPressed: 
-        ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+          FlatButton(onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
           return new GameMenu(animal: widget.animal,);
-        })),
-         icon: new Icon(Icons.gamepad))
+         })),
+         color: Colors.transparent,
+        child:
+        Image.asset('assets/images/joystick.png') ,
+         ),
+
+
+         FlatButton(onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+          return new GameMenu(animal: widget.animal,);
+         })),
+         color: Colors.transparent,
+        child:
+        Image.asset('assets/images/trolley.png') ,
+         ),
+
 
 
         ],),
@@ -112,8 +131,17 @@ class _MainMenuState extends State<MainMenu>{
   ),
 
 
-    )); 
+    ));
+    _displayCoins(int coins){
+
+      Image.asset('assets/images/coins.png');
+      Text('$coins');
+
+
+    } 
   }
+
+
     
 
 

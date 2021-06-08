@@ -61,14 +61,14 @@ int goldsSet(int data){
 String animalLink(int animalID){
 
   if (animalID==1) { //chien
-   return  'https://i.pinimg.com/originals/5f/82/6d/5f826dcd39712916a1f3324cfeac717d.gif';
+   return  'assets/images/Shiba.gif';
     
   }
   else if (animalID==2) { //chat
-     return 'https://i.ibb.co/NZ9Hh0K/ezgif-com-gif-maker.gif';
+     return 'assets/images/ezgif.com-gif-maker.gif';
     
   }
-  return 'https://thumbs.gfycat.com/BackEcstaticAuklet-max-1mb.gif';
+  return 'assets/images/Shiba_Running.gif';
 
 }
 
@@ -76,12 +76,16 @@ String animalLink(int animalID){
 
 
 Image animalDisplay (int animalInt){
-  return new Image.network(animalLink(animalInt), );
+  return new Image.asset(animalLink(animalInt), );
 }
   
 
 
+
+
 }
+
+
 
 
 
