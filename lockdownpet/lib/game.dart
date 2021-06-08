@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:lockdownpet/game1.dart';
 import 'package:lockdownpet/home.dart';
+import 'package:lockdownpet/showerRoom.dart';
 import 'main.dart';
 import 'monstyle.dart';
 import 'game1.dart';
 import 'game2.dart';
 import 'game3.dart';
 import 'animalStats.dart';
+import 'showerRoom.dart';
 
 class GameMenu extends StatefulWidget{
 
@@ -52,9 +54,9 @@ body: Center(
 
 
       RaisedButton(onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
-          return new Game2();
+          return new Shower(animal: widget.animal);
         })),
-        child: montextavocado('Game2', 1, Colors.blue)
+        child: montextavocado('ShowerRoom', 1, Colors.blue)
         
              ),
 

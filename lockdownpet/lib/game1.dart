@@ -34,7 +34,6 @@ class _Game1State extends State<Game1>{
   bool _buttonPushed=false;
 
   void _startTimer(){
-    Navigator.pop(context);
 
 
       _timer= Timer.periodic(Duration(seconds: 1), (timer) { 
@@ -51,6 +50,37 @@ class _Game1State extends State<Game1>{
           if(widget.animal.lifeValue<5){
             widget.animal.lifeValueSet(widget.animal.lifeValueGet()+1);
           }
+          showDialog(context: context, barrierDismissible: false, builder: (BuildContext context){
+          return new SimpleDialog(
+            
+          
+            title: new Text('Bravo ! '),
+            contentPadding: EdgeInsets.all(15.0),
+            children: <Widget>[
+              Row(
+
+                children: [
+                  new Text('Tu as fini avec un score de $_score'+' ! Tu remporte $_score '),
+                  Image.asset('assets/images/coin.png', height: 20,),
+                ],             
+
+
+              ),
+              
+              new RaisedButton(onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+          return new MainMenu(animal: widget.animal,);
+         })),
+
+              color: Colors.blue,
+              textColor: Colors.pink,
+              child: Text('Retourner au menu'),
+
+              )
+            ],
+            
+
+          );
+      });
 
 
         }
@@ -77,26 +107,27 @@ body: Center(
 
     children:
      <Widget>[
-       RaisedButton(onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+       FlatButton(onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
           return new MainMenu(animal: widget.animal,);
         })),
-        child: montextavocado('Home', 1, Colors.blue),),
+        color: couleurBouton(_buttonPushed),
+        child: montextavocado('Home', 1, couleurTexte(_buttonPushed) )),
       
-        (_temps==10)? montextpixel('READY ?', 3, Colors.amber) : montextpixel('CLIQUEZ !', 3, Colors.amber),
+        (_temps==10)? montextpixel('PREPAREZ VOUS !', 3, Colors.amber) : montextpixel('CLIQUEZ !', 3, Colors.amber),
         montextpixel('$_temps', 2, Colors.black),
         montextpixel('$_score', 1, Colors.amber),
 
 
       
-
-      RaisedButton(onPressed: () { _dialog('READY, SET, GO !', 'Cliquez sur l écran le plus rapidement possible pendant 10 secondes. Vous etes pret ?', 'GO');
+      FlatButton(onPressed:(){ _startTimer();
       
-      _buttonPushed=true;
-      }
-      ,
-      child: Text('Expliquez moi ! '),
+      _buttonPushed=true;}, 
+      
+      
+      child: Text('Lancer le timer !' ),
       color: couleurBouton(_buttonPushed),
-      ),
+      textColor: couleurTexte(_buttonPushed),),
+
       
 
 
@@ -161,6 +192,17 @@ Color couleurBouton(bool buttonState){
   }
   else{
     return Colors.orange;
+  }
+
+}
+Color couleurTexte(bool buttonState){
+
+  if (buttonState) {
+    return Colors.transparent;
+    
+  }
+  else{
+    return Colors.black;
   }
 
 }

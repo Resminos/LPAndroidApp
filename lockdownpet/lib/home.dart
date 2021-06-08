@@ -64,6 +64,7 @@ class _MainMenuState extends State<MainMenu>{
 
       
       widget.animal.animalDisplay(widget.animal.typeGet()),
+      
 
       SizedBox(
         height: 50,
@@ -84,8 +85,8 @@ class _MainMenuState extends State<MainMenu>{
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors : [
-            Colors.amber,
-            Color.fromRGBO(249, 133, 43,1)
+            Colors.pink,
+            Color.fromRGBO(252, 185, 249 , 1),
             
           ]
         )
@@ -107,7 +108,16 @@ class _MainMenuState extends State<MainMenu>{
          })),
          color: Colors.transparent,
         child:
-        Image.asset('assets/images/joystick.png') ,
+        Image.asset('assets/images/game-console.png') ,
+         ),
+
+
+         FlatButton(onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+          return new GameMenu(animal: widget.animal,);
+         })),
+         color: Colors.transparent,
+        child:
+        Image.asset('assets/images/dog-collar.png') ,
          ),
 
 
@@ -138,7 +148,7 @@ class _MainMenuState extends State<MainMenu>{
       Text('$coins');
 
 
-    } 
+    }
   }
 
 
