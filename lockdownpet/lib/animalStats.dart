@@ -11,7 +11,6 @@ class Animal{
 
   return this.name;
 
-
 }
 String nameSet(String data){
 
