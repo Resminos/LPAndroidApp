@@ -17,7 +17,6 @@ String nameSet(String data){
 
   return this.name =data;
 
-
 }
 int typeGet(){
 
