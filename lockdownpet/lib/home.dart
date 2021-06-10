@@ -33,7 +33,7 @@ class _MainMenuState extends State<MainMenu>{
   @override
   Widget build(BuildContext context) {
 
-    widget.animal.lifeValueSet(5);
+    
     // TODO: implement build
     return Scaffold(
 

@@ -63,7 +63,7 @@ String animalLink(int animalID){
     
   }
   else if (animalID==2) { //chat
-     return 'assets/images/ezgif.com-gif-maker.gif';
+     return 'assets/images/cat.gif';
     
   }
   return 'assets/images/Shiba_Running.gif';

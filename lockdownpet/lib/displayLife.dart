@@ -22,8 +22,9 @@ String lifeLink(int points){
      return 'https://i.ibb.co/9rdkDhH/BV1.png';
     
   }
-  return 'https://thumbs.gfycat.com/BackEcstaticAuklet-max-1mb.gif';
-
+  else {
+    return 'https://moodle.isep.fr/moodle/pluginfile.php/5747/user/icon/fordson/f2?rev=399762 ';
+  }
 }
 
 
