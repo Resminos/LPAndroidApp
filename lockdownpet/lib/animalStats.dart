@@ -6,6 +6,9 @@ class Animal{
   int type=0;
   int lifeValue=0;
   int golds=0;
+  List<String> inventaire = [];
+
+
 
   String nameGet(){
 
@@ -52,6 +55,17 @@ int goldsSet(int data){
 
   return this.golds=data;
 
+
+}
+List<String> inventaireGet(List<String> data){
+ 
+ return this.inventaire;
+
+}
+
+void inventaireSet(String data){
+
+return this.inventaire.add(data);
 
 }
 

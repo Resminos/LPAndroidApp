@@ -113,7 +113,7 @@ body: Center(
         color: couleurBouton(_buttonPushed),
         child: montextavocado('Home', 1, couleurTexte(_buttonPushed) )),
       
-        (_temps==10)? montextpixel('PREPAREZ VOUS !', 3, Colors.amber) : montextpixel('CLIQUEZ !', 3, Colors.amber),
+        (_temps==10)? montextpixel('READY ?', 3, Colors.amber) : montextpixel('CLIQUEZ !', 3, Colors.amber),
         montextpixel('$_temps', 2, Colors.black),
         montextpixel('$_score', 1, Colors.amber),
 

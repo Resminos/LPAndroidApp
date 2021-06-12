@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lockdownpet/game1.dart';
+import 'package:lockdownpet/shop.dart';
 import 'main.dart';
 import 'monstyle.dart';
 import 'game.dart';
@@ -122,7 +123,7 @@ class _MainMenuState extends State<MainMenu>{
 
 
          FlatButton(onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
-          return new GameMenu(animal: widget.animal,);
+          return new ShopMenu(animal: widget.animal);
          })),
          color: Colors.transparent,
         child:
