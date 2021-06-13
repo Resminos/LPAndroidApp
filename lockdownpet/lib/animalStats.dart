@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'items.dart';
 
 
 class Animal{
@@ -57,17 +58,12 @@ int goldsSet(int data){
 
 
 }
-List<String> inventaireGet(List<String> data){
+List<String> inventaireGet(){
  
  return this.inventaire;
 
 }
 
-void inventaireSet(String data){
-
-return this.inventaire.add(data);
-
-}
 
 
 String animalLink(int animalID){
