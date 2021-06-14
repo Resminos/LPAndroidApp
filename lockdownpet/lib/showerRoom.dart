@@ -217,9 +217,10 @@ class _ShowerState extends State<Shower>{
 
             Positioned(
               
-              child: 
+              bottom:-3,
               
-              Text('Arretez à '+randomWater.toString()+' sec'),
+              child: 
+                  montextpixel(randomWater.toString()+' s', 1, Colors.black)
             )
 
               ],
@@ -275,11 +276,10 @@ class _ShowerState extends State<Shower>{
             }, child: Image.asset('assets/images/soap.png', width: 70)),
 
             Positioned(
-              bottom:-15,
+              bottom:-3,
               
               child: 
-              Text('Arretez à '+randomSoap.toString()+' sec'),
-            )
+                  montextpixel(randomSoap.toString()+' s', 1, Colors.black)            )
 
 
               ]
@@ -335,10 +335,10 @@ class _ShowerState extends State<Shower>{
             }, child: Image.asset('assets/images/hair-brush.png', width: 70,)),
 
             Positioned(
+              bottom:-3,
+              
               child: 
-              
-              
-              Text('Arreter à '+randomBrush.toString()+' sec'),
+                  montextpixel(randomBrush.toString()+' s', 1, Colors.black)
             )
               ]
             )
@@ -403,8 +403,8 @@ void finDeJeu(){
               Row(
 
                 children: [
-                  new Text('Tu as fini avec un score de '+'$score'+' ! Tu remportes '+ (score*20).toString()),
-                  Image.asset('assets/images/coin.png', height: 20,),
+                montextpixel('Tu as fini avec un score de '+'$score'+' ! Tu remportes '+ (score*20).toString(), 0.55, Colors.black) ,
+                Image.asset('assets/images/coin.png', height: 20,),
                 ],             
 
 

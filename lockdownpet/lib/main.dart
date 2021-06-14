@@ -1,15 +1,20 @@
+
 import 'package:flutter/material.dart';
 import 'package:lockdownpet/animalStats.dart';
+import 'package:lockdownpet/app.dart';
 import 'package:lockdownpet/home.dart';
 import 'monstyle.dart';
 import 'animalStats.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'database.dart';
  
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
-  runApp(MyApp());
+  runApp(App());
 }
 
 
@@ -22,7 +27,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.orange,
-        fontFamily: 'Hello Avocado',
+        fontFamily: 'LLPIXEL',
       ),
       home: MyHomePage(title: 'LockDown Pet'),
       debugShowCheckedModeBanner: false
@@ -57,11 +62,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       
       
-      appBar: AppBar(
-        title: Text(widget.title),
-        centerTitle: true,
-      ),
-      
       body: Center(
         child: Column(
         
@@ -71,8 +71,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 
-              Text('Quel animal voulez vous ?'),
-              Text('Chien     Chat'),
+              montextpixel('Choisissez un animal', 2, Colors.blue),
+              SizedBox(height: 50),
+              montextpixel('Chien    Chat', 1, Colors.black),
               Switch(value: switchchoice, onChanged: (bool b){
                 setState(() {
                   if (b==false){
@@ -114,34 +115,27 @@ class _MyHomePageState extends State<MyHomePage> {
               
 
               decoration: InputDecoration(
-                labelText: 'Comment voulez vous appeler votr animal'
+                labelText: 'Comment voulez vous appeler votre animal'
               
               ),
               ),
 
-
+            SizedBox(height: 50),
 
 
 
              RaisedButton(
+               
                 onPressed:()=> Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => MainMenu(animal: animal,)), (route) => false),
                 color: Colors.orange[200],
-                  
-                  elevation: 10,
-                child:
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                 child:
+                
                   Text('Valider',style: new TextStyle(color:Colors.black, fontSize: 20),
                   ),
                   
              
                 ),
-              
-                
-                
-                
-            
-              
-           
-             montextpixel(animalName, 1, Colors.black)
 
               ],
         ),

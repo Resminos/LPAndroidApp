@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:lockdownpet/game1.dart';
 import 'package:lockdownpet/home.dart';
+import 'package:lockdownpet/profil.dart';
 import 'package:lockdownpet/showerRoom.dart';
 import 'main.dart';
 import 'monstyle.dart';
 import 'game1.dart';
-import 'game2.dart';
-import 'game3.dart';
+
 import 'animalStats.dart';
 import 'showerRoom.dart';
 
@@ -37,33 +37,56 @@ class _GameMenuState extends State<GameMenu>{
       
 body: Center(
   child: Column(
-    mainAxisAlignment: MainAxisAlignment.center,
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: <Widget>[
 
-      RaisedButton(onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+      Row(
+        children:[
+      RaisedButton(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(300)),
+        onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
           return new MainMenu(animal: widget.animal,);
         })),
-        child: montextavocado('Home', 1, Colors.blue),),
+        child: montextpixel('Home', 1, Colors.black),),
+
+        ]
+      ),
 
 
-      RaisedButton(onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+
+
+      RaisedButton(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(300)),
+        onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
           return new Game1(animal: widget.animal,);
         })),
-        child: montextavocado('Game1', 1, Colors.blue),),
+        child: montextpixel('JEU 1 ', 2, Colors.amber),),
 
 
 
-      RaisedButton(onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+      RaisedButton(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(300)),
+        onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
           return new Shower(animal: widget.animal);
         })),
-        child: montextavocado('ShowerRoom', 1, Colors.blue)
+        child: montextpixel('Shower Room', 2, Colors.amber)
         
              ),
 
-      RaisedButton(onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
-          return new Game3();
+
+             RaisedButton(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(300)),
+        onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+          return new Profil();
         })),
-        child: montextavocado('Game3', 1, Colors.blue),),
+        child: montextpixel('Profile', 2, Colors.amber)
+        
+             ),
+
+             SizedBox(
+               height: 1
+             )
+
 
 
     

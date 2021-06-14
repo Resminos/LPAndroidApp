@@ -33,13 +33,22 @@ class _InvetaireMenuState extends State<InvetaireMenu>{
     return new Scaffold(
       
 body: Center(
+    child: SingleChildScrollView(
   child: Column(
     mainAxisAlignment: MainAxisAlignment.center,
     children: <Widget>[
-      FlatButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+      Row(
+children:[
+FlatButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
                     return new MainMenu(animal: widget.animal);
                   })),
+                  color: Colors.orange[200],
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                    child: Text('Home')),
+]
+
+      ),
+      
 
       for (int i=0; i<widget.animal.inventaire.length; i++)
 
@@ -54,7 +63,7 @@ body: Center(
   ),
 ),
 
-    ); 
+    )); 
   }
 
 

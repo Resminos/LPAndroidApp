@@ -54,25 +54,27 @@ class _Game1State extends State<Game1>{
           return new SimpleDialog(
             
           
-            title: new Text('Bravo ! '),
-            contentPadding: EdgeInsets.all(15.0),
+            title: new Text('Bravo !'),
+            contentPadding: EdgeInsets.all(25.0),
             children: <Widget>[
               Row(
 
                 children: [
-                  new Text('Tu as fini avec un score de $_score'+' ! Tu remporte $_score '),
+                  new Text('Tu as fini avec un score de $_score'+' ! Tu remportes $_score ', textScaleFactor: 0.7,),
                   Image.asset('assets/images/coin.png', height: 20,),
                 ],             
 
 
               ),
               
-              new RaisedButton(onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+              new RaisedButton(
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(300)),
+                onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
           return new MainMenu(animal: widget.animal,);
          })),
 
-              color: Colors.blue,
-              textColor: Colors.pink,
+              color: Colors.orange[200],
+              textColor: Colors.black,
               child: Text('Retourner au menu'),
 
               )
@@ -107,9 +109,18 @@ body: Center(
 
     children:
      <Widget>[
-       FlatButton(onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+       FlatButton(
+         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(300)),
+         onPressed: (){
+           if (_buttonPushed==false){
+           
+            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
           return new MainMenu(animal: widget.animal,);
-        })),
+        }));
+        
+           }
+        
+        },
         color: couleurBouton(_buttonPushed),
         child: montextavocado('Home', 1, couleurTexte(_buttonPushed) )),
       
@@ -119,9 +130,14 @@ body: Center(
 
 
       
-      FlatButton(onPressed:(){ _startTimer();
+      FlatButton(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(300)),
+        onPressed:(){
+          if (_buttonPushed==false){
+          
+           _startTimer();
       
-      _buttonPushed=true;}, 
+      _buttonPushed=true;}}, 
       
       
       child: Text('Lancer le timer !' ),

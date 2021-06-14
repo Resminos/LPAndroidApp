@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:lockdownpet/game1.dart';
+import 'package:lockdownpet/podometer.dart';
 import 'package:lockdownpet/shop.dart';
 import 'main.dart';
 import 'monstyle.dart';
 import 'game.dart';
 import 'displayLife.dart';
 import 'animalStats.dart';
-
-
 class MainMenu extends StatefulWidget{
 
 Animal animal;
@@ -75,28 +74,7 @@ class _MainMenuState extends State<MainMenu>{
 
 
 
-      Container(
-        
-        
-        height: 50,
-        decoration: BoxDecoration(
-        color: Colors.amber,
-        borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)), 
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors : [
-            Colors.pink,
-            Color.fromRGBO(252, 185, 249 , 1),
-            
-          ]
-        )
-
-        ),
-        
-        child:
-        
-              Row(        
+        Row(        
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
         children: [
@@ -104,38 +82,47 @@ class _MainMenuState extends State<MainMenu>{
 
         
 
-          FlatButton(onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+          FlatButton(
+            height: 85,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(300)),
+
+            onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
           return new GameMenu(animal: widget.animal,);
          })),
-         color: Colors.transparent,
+         color: Colors.blue,
         child:
-        Image.asset('assets/images/game-console.png') ,
+        
+        Image.asset('assets/images/game-console.png', width: 50,) ,
          ),
 
 
-         FlatButton(onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
-          return new GameMenu(animal: widget.animal,);
+         FlatButton(
+          height: 85,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(300)),
+           onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+          return new PodometreMenu();
          })),
-         color: Colors.transparent,
+         color: Colors.blue,
         child:
-        Image.asset('assets/images/dog-collar.png') ,
+        Image.asset('assets/images/dog-collar.png', width: 50,) ,
          ),
 
 
-         FlatButton(onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+         FlatButton(
+           height: 85,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(300)),
+          onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
           return new ShopMenu(animal: widget.animal);
          })),
-         color: Colors.transparent,
+         color: Colors.blue,
         child:
-        Image.asset('assets/images/trolley.png') ,
+        Image.asset('assets/images/trolley.png', width: 50,) ,
          ),
 
 
 
         ],),
 
-        
-      ),
       
 
     ],

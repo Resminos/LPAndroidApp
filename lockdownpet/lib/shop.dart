@@ -55,12 +55,17 @@ body: Center(
                     FlatButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
                     return new MainMenu(animal: widget.animal);
                   })),
-                   child: Text('Home')),
+                  color: Colors.orange[200],
+                  
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                   child: montextpixel('Home', 1, Colors.black)),
 
                    FlatButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
                     return new InvetaireMenu(animal: widget.animal);
                   })),
-                   child: Text('Inventaire')),
+                  color: Colors.orange[200],
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                   child: montextpixel('Inventaire', 1, Colors.black)),
 
                   ],
                 ), 

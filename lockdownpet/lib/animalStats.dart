@@ -7,7 +7,8 @@ class Animal{
   int type=0;
   int lifeValue=0;
   int golds=0;
-  List<String> inventaire = [];
+  List<String> inventaire = ['soap.png', 'shower-head.png', 'hair-brush.png'];
+
 
 
 
